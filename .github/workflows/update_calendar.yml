@@ -1,0 +1,32 @@
+name: Update Calendar
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 ics
+
+      - name: Run calendar script
+        run: python generate_calendar.py
+
+      - name: Commit and push updated .ics
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add restoration_church_calendar.ics
+          git commit -m "Auto-update calendar feed" || echo "No changes"
+          git push
