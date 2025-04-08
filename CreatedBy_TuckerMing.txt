@@ -1,0 +1,5 @@
+This project was built by Tucker Ming for Restoration Church Bryan.
+
+It automatically scrapes the events from Subsplash and publishes a live-updating .ics calendar using Python and GitHub Actions.
+
+Built with ❤️ and a lot of terminal retries.
