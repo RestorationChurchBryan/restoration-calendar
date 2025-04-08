@@ -2,93 +2,93 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Calling all women (graduating college seniors and up!)\n\n\nJoin us this spring for a weekly study on Colossians. We will meet Tuesday mornings from 6:30am-7:30am.\n\n\nRooted Spring 2025 will kick off Tuesday\, January\, 28\, 2025 at Restoration's property (501 W. 31st Street in Bryan) and will meet for 12 weeks (with a break for Spring Break). This spring\, we will be walking through a study of Colossians from At His Feet Studies. \n\n\nRooted exists to cultivate spaces for women to become rooted first and foremost in their love and knowledge of God and His Word\, and in the community of Restoration Church Bryan through cross-MCG relationships with women in different stages of life.\n\n\nWomen are welcome to bring their own breakfast each week\, but coffee will be provided by Restoration. Each week will begin with a short devo led by different women\, followed by smaller table discussions.
-DTSTART:20250422T063000Z
-SUMMARY:Rooted: Spring 2025
-UID:5c69df55-a785-49ef-886b-5d8ec353cab5@5c69.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Our next membership class will be held on SUNDAY\, April 13th! We will be hosting a covenant membership class from 4:00-5:30pm. Whether you're simply curious about membership\, OR desiring to be "all in" on our mission for Bryan and beyond\, attending this class is the first step! As a part of the class\, we'll cover all the ins and outs of Restoration Church Bryan beliefs\, practices\, governance\, vision\, values\, and more.
-DTSTART:20250413T040000Z
-SUMMARY:Covenant Membership Class
-UID:c3d734d2-9db5-439a-905f-723614f2b78f@c3d7.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Surge is our Sunday evening environment that comes from Habakkuk 2:14\, which talks about the earth being filled with the knowledge of the Lord as the waters cover the sea. We want the gospel to surge forward in our youth and community. Surge is a fun environment for students to connect\, bring friends\, and grow in their faith. There will be board games\, four square\, gaga ball\, video games\, foosball\, and other fun activities along with a 10-12 minute devotional.
-DTSTART:20250413T060000Z
-SUMMARY:Surge
-UID:d03221c9-4468-48e8-8ac0-e53d21dd7f6b@d032.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Calling all women (graduating college seniors and up!)\n\n\nJoin us this spring for a weekly study on Colossians. We will meet Tuesday mornings from 6:30am-7:30am.\n\n\nRooted Spring 2025 will kick off Tuesday\, January\, 28\, 2025 at Restoration's property (501 W. 31st Street in Bryan) and will meet for 12 weeks (with a break for Spring Break). This spring\, we will be walking through a study of Colossians from At His Feet Studies. \n\n\nRooted exists to cultivate spaces for women to become rooted first and foremost in their love and knowledge of God and His Word\, and in the community of Restoration Church Bryan through cross-MCG relationships with women in different stages of life.\n\n\nWomen are welcome to bring their own breakfast each week\, but coffee will be provided by Restoration. Each week will begin with a short devo led by different women\, followed by smaller table discussions.
-DTSTART:20250415T063000Z
-SUMMARY:Rooted: Spring 2025
-UID:c7d9f2d1-ea8f-4bbd-b5e9-02cfb1701f3e@c7d9.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Calling all women (graduating college seniors and up!)\n\n\nJoin us this spring for a weekly study on Colossians. We will meet Tuesday mornings from 6:30am-7:30am.\n\n\nRooted Spring 2025 will kick off Tuesday\, January\, 28\, 2025 at Restoration's property (501 W. 31st Street in Bryan) and will meet for 12 weeks (with a break for Spring Break). This spring\, we will be walking through a study of Colossians from At His Feet Studies. \n\n\nRooted exists to cultivate spaces for women to become rooted first and foremost in their love and knowledge of God and His Word\, and in the community of Restoration Church Bryan through cross-MCG relationships with women in different stages of life.\n\n\nWomen are welcome to bring their own breakfast each week\, but coffee will be provided by Restoration. Each week will begin with a short devo led by different women\, followed by smaller table discussions.
-DTSTART:20250408T063000Z
-SUMMARY:Rooted: Spring 2025
-UID:b16eff54-1db8-4772-8f9e-a24f58e2a787@b16e.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Come join us at the New Property SUNDAY NIGHT April 13th at 7:30PM for Prayer and Worship. We are so excited to read\, pray\, and sing with our college fam!
-DTSTART:20250413T073000Z
-SUMMARY:College Worship Night
-UID:3f0b9625-d6ec-409e-b195-f67ca14ab16c@3f0b.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Refuge is a weekly Bible study program for children preschool (age 4+) to 6th grade. With the help of our wonderful volunteer team\, we pour into the kids lives by building strong relationships through games\, Bible study\, discussions\, and snack.
-DTSTART:20250424T050000Z
-SUMMARY:Refuge
-UID:bb8e0585-d4b6-40f4-a77c-5fc63d90744e@bb8e.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Calling all men (graduating college seniors and up)! \n\n\nJoin us for a weekly men's gathering on Thursday mornings (6:30 - 7:30am) this fall.\n\n\nWatchmen will launch Thursday\, August 15th at Restoration's new property (501 W. 31st St. in Bryan). Watchmen exists to equip men (21+) to be disciples and disciple-makers and to facilitate cross-MCG fellowship and accountability among our men. \n\n\nMen will be invited to bring their own breakfast if they'd like\, however\, Restoration will provide the coffee each week. Men will gather for fellowship\, be led in a short devotional time\, and then will break up into table groups to have discussion around the book.
-DTSTART:20250410T063000Z
-SUMMARY:Watchmen: Spring 2025
-UID:2d632d96-b449-4cab-bba8-e10e638406d6@2d63.org
+DESCRIPTION:Come enjoy some coffee and study with us at 501 West 31st during finals week! Coffee will be complimentary and enjoy a space to study with your friends and the college team!
+DTSTART:20250502T040000Z
+SUMMARY:Coffee Shop
+UID:77be190f-d85b-4fa4-81c3-fe00eea88518@77be.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:College Students! Join us every other Wednesday morning to come together in a regular practice of prayer\, gathering to lift up our city\, campus\, and hurting world to our God who listens and is ready to move. We will meet at 501 West 31st and would love to see you there!
-DTSTART:20250416T070000Z
+DTSTART:20250430T070000Z
 SUMMARY:College Prayer Gathering
-UID:54d4e2b5-e96b-4c40-aa0d-1d98d1f68fec@54d4.org
+UID:cc47ba4f-2000-4a72-a894-0974e1132086@cc47.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Students who have completed 3rd-6th grade are invited to join us for preteen camp at Highland Lakes this summer! This summer\, we plan to attend Lift Session One\, June 9th-12th! Camp is a phenomenal opportunity for your child to grow in faith and community. Want more info? Check out Highland Lakes' website and/or email mailto:tori@restorationbryan.com!
+DTSTART:20120609T090000Z
+SUMMARY:Pre-Teen Summer Camp
+UID:803c6210-a192-43d0-b7a7-26d0a2df72d8@803c.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:College Students! Join us every other Wednesday morning to come together in a regular practice of prayer\, gathering to lift up our city\, campus\, and hurting world to our God who listens and is ready to move. We will meet at 501 West 31st and would love to see you there!
+DTSTART:20250514T070000Z
+SUMMARY:College Prayer Gathering
+UID:47d45fff-4b44-4107-a10b-838671df5245@47d4.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Trivia night is back!! Get your team of 8-10 together to battle it out and prove your genius! All proceeds from this fun event help get our Restoration Bryan kids to summer camp this July! Camp is a phenomenal opportunity for the children to grow in faith\, especially for those who would otherwise not have an opportunity like it! The children will also have some great silent auction items you can bid on. Join us!
+DTSTART:20250427T050000Z
+SUMMARY:Trivia Night
+UID:2d543a4d-4121-469b-b1df-ac1607f971c7@2d54.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Join us for an evening prayer gathering at the new property (501 W 31st St.). At this gathering\, we will come together to seek God's wisdom and pray over our church!
+DTSTART:20250507T063000Z
+SUMMARY:First Wednesday Prayer Service
+UID:bf938a7a-3a04-444a-9509-5b7c5adadb3f@bf93.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Immediately following each worship service\, everyone is invited to witness as we celebrate the baptisms of those who have professed Christ and are desiring to identify with his life\, death and resurrection.\n\n\nIf you are interested in meeting with a staff member to discuss your desire to be baptized\, please fill out the form below or email mailto:info@restorationbryan.com
+DTSTART:20250504T090000Z
+SUMMARY:Baptism Celebration
+UID:abb2411c-1137-4e34-94e1-a204c7a56a10@abb2.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Surge is our Sunday evening environment that comes from Habakkuk 2:14\, which talks about the earth being filled with the knowledge of the Lord as the waters cover the sea. We want the gospel to surge forward in our youth and community. Surge is a fun environment for students to connect\, bring friends\, and grow in their faith. There will be board games\, four square\, gaga ball\, video games\, foosball\, and other fun activities along with a 10-12 minute devotional.
-DTSTART:20250420T060000Z
+DTSTART:20250518T060000Z
 SUMMARY:Surge
-UID:591603c9-1caa-4a4e-9e21-932d1a3058c3@5916.org
+UID:819a1676-2dda-4a98-9cad-d098ac1106bc@819a.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Join us for an evening prayer gathering at the new property (501 W 31st St.). At this gathering\, we will come together to seek God's wisdom and pray over our church!
+DTSTART:20250604T063000Z
+SUMMARY:First Wednesday Prayer Service
+UID:6ab84079-2b50-4212-b729-0f8f98afe915@6ab8.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:This Mother's Day\, May 11th\, will be our spring child dedication Sunday. As a church\, we want to come alongside you in your Biblical commitment to raise your child to know and love the Lord. Whether you have a new addition or a child you have not dedicated yet\, we would love to talk with you. Please email mailto:tori@restorationbryan.com if you are interested in this dedication or register your child below.
+DTSTART:20250511T090000Z
+SUMMARY:Mother's Day-Baby Dedication
+UID:4a21e7b3-963e-4407-aba4-4d680a2dceb9@4a21.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:We are so excited for College Ministry this summer! Come join us to kick off the summer with some games\, friends\, and food! Meet some new friends and get excited for kicking off summer MCGs!
+DTSTART:20250527T070000Z
+SUMMARY:College Summer Kickoff
+UID:3edaa648-3b9a-485a-b903-b72e634e1c1c@3eda.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Surge is our Sunday evening environment that comes from Habakkuk 2:14\, which talks about the earth being filled with the knowledge of the Lord as the waters cover the sea. We want the gospel to surge forward in our youth and community. Surge is a fun environment for students to connect\, bring friends\, and grow in their faith. There will be board games\, four square\, gaga ball\, video games\, foosball\, and other fun activities along with a 10-12 minute devotional.
+DTSTART:20250427T060000Z
+SUMMARY:Surge
+UID:bd8a9f7b-2d8b-4d24-b3fe-f1450a273011@bd8a.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Surge is our Sunday evening environment that comes from Habakkuk 2:14\, which talks about the earth being filled with the knowledge of the Lord as the waters cover the sea. We want the gospel to surge forward in our youth and community. Surge is a fun environment for students to connect\, bring friends\, and grow in their faith. There will be board games\, four square\, gaga ball\, video games\, foosball\, and other fun activities along with a 10-12 minute devotional.
+DTSTART:20250511T060000Z
+SUMMARY:Surge
+UID:859d7adf-32df-483e-aad7-05db34c445a4@859d.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Surge is our Sunday evening environment that comes from Habakkuk 2:14\, which talks about the earth being filled with the knowledge of the Lord as the waters cover the sea. We want the gospel to surge forward in our youth and community. Surge is a fun environment for students to connect\, bring friends\, and grow in their faith. There will be board games\, four square\, gaga ball\, video games\, foosball\, and other fun activities along with a 10-12 minute devotional.
+DTSTART:20250504T060000Z
+SUMMARY:Surge
+UID:7739ce3c-3833-41b4-ba6d-622da815b538@7739.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Refuge is a weekly Bible study program for children preschool (age 4+) to 6th grade. With the help of our wonderful volunteer team\, we pour into the kids lives by building strong relationships through games\, Bible study\, discussions\, and snack.
-DTSTART:20250410T050000Z
+DTSTART:20250501T050000Z
 SUMMARY:Refuge
-UID:c82531f7-c5f3-4e23-a032-81f1ad403ae5@c825.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Calling all men (graduating college seniors and up)! \n\n\nJoin us for a weekly men's gathering on Thursday mornings (6:30 - 7:30am) this fall.\n\n\nWatchmen will launch Thursday\, August 15th at Restoration's new property (501 W. 31st St. in Bryan). Watchmen exists to equip men (21+) to be disciples and disciple-makers and to facilitate cross-MCG fellowship and accountability among our men. \n\n\nMen will be invited to bring their own breakfast if they'd like\, however\, Restoration will provide the coffee each week. Men will gather for fellowship\, be led in a short devotional time\, and then will break up into table groups to have discussion around the book.
-DTSTART:20250424T063000Z
-SUMMARY:Watchmen: Spring 2025
-UID:fa5bdd9d-a51b-41a0-8d1d-96ad5ba8b3fc@fa5b.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:If you are interested in being baptized at Restoration\, or if you're desiring to understand the biblical doctrine / theology behind baptism\, please join us for this informational! In this time\, we will . . . -Walk through the significance of believer's baptism. -Look at Jesus' command and commission to baptize. -Cover examples of believer's baptism from the book of Acts. Our hope is that this class would be informative\, but also transformative for those seeking to be faithful disciples of Jesus!
-DTSTART:20250413T100000Z
-SUMMARY:Baptism Informational
-UID:1e111e4c-d89f-45c3-84ca-3cecb6f68788@1e11.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Refuge is a weekly Bible study program for children preschool (age 4+) to 6th grade. With the help of our wonderful volunteer team\, we pour into the kids lives by building strong relationships through games\, Bible study\, discussions\, and snack.
-DTSTART:20250417T050000Z
-SUMMARY:Refuge
-UID:aa51a0b5-c276-4424-8e4c-719a176fdbe6@aa51.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Calling all men (graduating college seniors and up)! \n\n\nJoin us for a weekly men's gathering on Thursday mornings (6:30 - 7:30am) this fall.\n\n\nWatchmen will launch Thursday\, August 15th at Restoration's new property (501 W. 31st St. in Bryan). Watchmen exists to equip men (21+) to be disciples and disciple-makers and to facilitate cross-MCG fellowship and accountability among our men. \n\n\nMen will be invited to bring their own breakfast if they'd like\, however\, Restoration will provide the coffee each week. Men will gather for fellowship\, be led in a short devotional time\, and then will break up into table groups to have discussion around the book.
-DTSTART:20250417T063000Z
-SUMMARY:Watchmen: Spring 2025
-UID:d633d3e9-ab92-4a5a-93f1-6189ae2985f2@d633.org
+UID:d14cea9f-ec4d-42f2-9c16-7eea4248c849@d14c.org
 END:VEVENT
 END:VCALENDAR
