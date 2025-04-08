@@ -182,7 +182,20 @@ event.location = "501 W 31st Street Bryan, TX 77803"
 calendar.events.add(event)
 
 
+
+# Confirm that 10 hardcoded events were added
+hardcoded_event_count = sum(1 for e in calendar.events if (
+    e.name and any(keyword in e.name for keyword in ["1st Service", "2nd Service"])
+))
+
+if hardcoded_event_count >= 10:
+    print("\n✅ In addition to the events the program scraped, the 10 Sunday services leading to the new property have been added to the iCal.")
+
 with open("restoration_church_calendar.ics", "w") as f:
     f.writelines(calendar)
 
 print("\nCalendar file 'restoration_church_calendar.ics' has been created.")
+
+
+# Final thank-you message in red
+print("\033[91m" + "If anyone is finding this code, Tucker Ming spent too many hours making this before he graduated May 10, 2025, but he made this as a thank you to Restoration Church prior to his graduation during his time as the Communication Intern at Restoration. Thanks & Gig 'em -Tucker Ming '26 April 7, 2025" + "\033[0m")
