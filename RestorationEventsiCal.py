@@ -1,70 +1,51 @@
-import re
-import time
-from datetime import datetime, timedelta
-from pytz import timezone
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from ics import Calendar, Event
 from dateutil import parser as dateparser
+from datetime import datetime
+import time
 
 # Configuration
-page_wait = 5       # Seconds to wait for each page load
-post_click_wait = 3 # Seconds to wait after each page load
+page_wait = 5
+post_click_wait = 3
 
-# Define local timezone for Bryan, College Station (US/Central)
-central_tz = timezone("US/Central")
-
-# Setup headless Chrome
 options = Options()
 options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
-all_event_blocks = []  # To store event blocks from each page
+all_event_blocks = []
 
-# Loop through pages 1 to 10 using explicit URL parameters.
 for page in range(1, 11):
     if page == 1:
         url = "https://subsplash.com/+t3nc/lb/ca/+m29p32p?embed&branding"
     else:
         url = f"https://subsplash.com/+t3nc/lb/ca/+m29p32p?branding=true&embed=true&page={page}"
     print(f"\nLoading page {page}: {url}")
+
     driver.get(url)
-    time.sleep(page_wait)  # Wait for page and its JS to load
+    time.sleep(page_wait)
 
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
-    
+
     event_blocks = soup.select(".kit-list-item")
     count = len(event_blocks)
     print(f"Page {page}: Found {count} events.")
-    
-    # If no events are found on this page, stop further pagination.
+
     if count == 0:
         print(f"No events found on page {page}. Stopping further pagination.")
         break
-        
+
     all_event_blocks.extend(event_blocks)
     time.sleep(post_click_wait)
 
 driver.quit()
 
-# Remove duplicate events based on event title
-unique_events = {}
-for block in all_event_blocks:
-    title_elem = block.select_one(".kit-list-item__title")
-    if title_elem:
-        title = title_elem.get_text(strip=True)
-        unique_events[title] = block
-all_event_blocks = list(unique_events.values())
-print(f"\nTotal unique events found from pages: {len(all_event_blocks)}")
+print(f"\nTotal raw events before filtering: {len(all_event_blocks)}")
+# No deduplication is performed — we keep every event block
 
-# Build the calendar
 calendar = Calendar()
-
-# Regular expression pattern to match expected datetime string.
-# Expected example: "April 12, 2025 from 7:30 to 9:00pm CDT"
-pattern = r'^(?P<date>[A-Za-z]+ \d{1,2}, \d{4}) from (?P<start>\d{1,2}:\d{2})(?:\s*(?P<period1>am|pm))?\s*(?:to|-)\s*(?P<end>\d{1,2}:\d{2})(?:\s*(?P<period2>am|pm))?(?:\s*(?P<tz>\S+))?'
 
 for i, block in enumerate(all_event_blocks):
     try:
@@ -73,73 +54,134 @@ for i, block in enumerate(all_event_blocks):
         desc_tag = block.select_one(".kit-list-item__summary")
         description = desc_tag.get_text(strip=True) if desc_tag else "No description provided."
 
-        # Attempt to parse the datetime string using the regex.
-        m = re.match(pattern, datetime_str, re.IGNORECASE)
-        if m:
-            date_part = m.group("date")
-            start_time = m.group("start")
-            period1 = m.group("period1")
-            end_time = m.group("end")
-            period2 = m.group("period2")
-            tz = m.group("tz")
-            # If start time lacks a period, use period2 if available.
-            if not period1:
-                period1 = period2 if period2 else ""
-            # Construct start_dt_str
-            start_dt_str = f"{date_part} {start_time} {period1}".strip()
-            if tz:
-                start_dt_str += f" {tz}"
-            # Construct end_dt_str if end_time is provided.
-            if end_time:
-                end_dt_str = f"{date_part} {end_time} {period2}".strip() if period2 else f"{date_part} {end_time}"
-                if tz:
-                    end_dt_str += f" {tz}"
+        if " from " in datetime_str:
+            parts = datetime_str.split(" from ")
+            if len(parts) != 2:
+                print(f"Skipping event {i}: Unexpected datetime format '{datetime_str}'")
+                continue
+            date_part, time_range = parts
+            if " to " in time_range:
+                start_time = time_range.split(" to ")[0].strip()
+            elif " - " in time_range:
+                start_time = time_range.split(" - ")[0].strip()
             else:
-                end_dt_str = None
+                start_time = time_range.strip()
+            start_dt_str = f"{date_part} {start_time}"
         else:
-            # Fallback: if regex doesn't match, assume the entire string is a date and assign default time.
             start_dt_str = f"{datetime_str.strip()} 09:00 AM"
-            end_dt_str = None
 
         try:
             start = dateparser.parse(start_dt_str)
         except Exception as parse_error:
-            print(f"Skipping event {i} due to start date parsing error: {parse_error}")
+            print(f"Skipping event {i} due to date parsing error: {parse_error}")
             continue
-
-        if end_dt_str:
-            try:
-                end = dateparser.parse(end_dt_str)
-            except Exception as parse_error:
-                print(f"Skipping event {i} due to end date parsing error: {parse_error}")
-                continue
-        else:
-            # Default duration: one hour after start if end time is missing.
-            end = start + timedelta(hours=1)
-
-        # Force the parsed datetime into US/Central timezone if naive:
-        if start.tzinfo is None:
-            start = central_tz.localize(start)
-        else:
-            start = start.astimezone(central_tz)
-
-        if end.tzinfo is None:
-            end = central_tz.localize(end)
-        else:
-            end = end.astimezone(central_tz)
 
         event = Event()
         event.name = title
         event.begin = start
-        event.end = end
         event.description = description
         event.dtstamp = datetime.utcnow()
         calendar.events.add(event)
-    
+
     except Exception as e:
         print(f"Skipping event {i} due to error: {e}")
 
-# Save the final iCalendar (.ics) file
+
+from datetime import datetime
+from ics import Event
+
+# Manually added Restoration events (originally from Excel)
+
+event = Event()
+event.name = "Restoration 1st Service"
+event.begin = datetime(2025, 4, 13, 8, 45)
+event.end = datetime(2025, 4, 13, 10, 15)
+event.description = "Will be at 501 W 31st Street, Child care will be 4's and under, Overflow space on lawn, carpool if possible"
+event.location = "501 W 31st Street Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 2nd Service"
+event.begin = datetime(2025, 4, 13, 10, 45)
+event.end = datetime(2025, 4, 13, 12, 0)
+event.description = "Will be at 501 W 31st Street, Child care will be 4's and under, Overflow space on lawn, carpool if possible"
+event.location = "502 W 31st Street Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 1st Service"
+event.begin = datetime(2025, 4, 20, 8, 45)
+event.end = datetime(2025, 4, 20, 10, 15)
+event.description = "Easter @ Ice House, Childcare 6th grade & under"
+event.location = "800 N Main St Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 2nd Service"
+event.begin = datetime(2025, 4, 20, 10, 45)
+event.end = datetime(2025, 4, 20, 12, 0)
+event.description = "Easter @ Ice House, Childcare 6th grade & under"
+event.location = "800 N Main St Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 1st Service"
+event.begin = datetime(2025, 4, 27, 8, 45)
+event.end = datetime(2025, 4, 27, 10, 15)
+event.description = "Childcare 6th grade & under"
+event.location = "800 N Main St Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 2nd Service"
+event.begin = datetime(2025, 4, 27, 10, 45)
+event.end = datetime(2025, 4, 27, 12, 0)
+event.description = "Childcare 6th grade & under"
+event.location = "800 N Main St Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 1st Service"
+event.begin = datetime(2025, 5, 4, 8, 30)
+event.end = datetime(2025, 5, 4, 9, 45)
+event.description = "Move to 501, Child care 4's and under"
+event.location = "501 W 31st Street Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 2nd Service"
+event.begin = datetime(2025, 5, 4, 10, 0)
+event.end = datetime(2025, 5, 4, 11, 15)
+event.description = "Move to 501, Child care 4's and under"
+event.location = "501 W 31st Street Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration 3rd Service"
+event.begin = datetime(2025, 5, 4, 11, 30)
+event.end = datetime(2025, 5, 4, 12, 45)
+event.description = "Move to 501, Child care 4's and under"
+event.location = "501 W 31st Street Bryan, TX 77803"
+calendar.events.add(event)
+
+
+event = Event()
+event.name = "Restoration Service"
+event.begin = datetime(2025, 5, 11, 10, 0)
+event.end = datetime(2025, 5, 11, 11, 30)
+event.description = "Services will be at 501 at 10 am the rest of the summer, child care is 4's and under"
+event.location = "501 W 31st Street Bryan, TX 77803"
+calendar.events.add(event)
+
+
 with open("restoration_church_calendar.ics", "w") as f:
     f.writelines(calendar)
 
